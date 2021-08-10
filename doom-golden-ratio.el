@@ -1,18 +1,19 @@
 ;;; doom-golden-ratio.el --- Doom Golden Ration -*- lexical-binding: t; -*-
-;;
+
 ;; Copyright (C) 2021 Paul Alesius
-;;
+
 ;; Author: Paul Alesius <https://github.com/paulalesius>
 ;; Maintainer: Paul Alesius <paul@unnservice.com>
 ;; Created: July 22, 2021
 ;; Modified: July 22, 2021
 ;; Version: 0.0.1
-;; Keywords: emacs script
+;; Keywords: extensions
 ;; Homepage: https://github.com/paulalesius/doom-golden-ratio
-;; Package-Requires: ((emacs "24.3"))
-;;
+;; Package-Requires: ((emacs "24.3")(evil "1.0"))
+
 ;;; Commentary:
-;;
+;; Some commentary
+
 ;;; Code:
 (require 'evil)
 (require 'core-lib)
@@ -31,7 +32,7 @@
     (evil-window-set-height new-height)
     (evil-window-set-width new-width)))
 
-;;;#autoload
+;;;###autoload
 (defun doom-golden-ratio ()
    "Determines first whether it is running in a graphical session."
    ;; Skip when the current window is the root window
@@ -39,7 +40,7 @@
      (unless (display-graphic-p)
        (doom-golden-ratio-term))))
 
-;;;#autoload
+;;;###autoload
 (define-minor-mode doom-golden-ratio-mode
   "Doom golden ratio mode."
   :group 'doom-golden-ratio
